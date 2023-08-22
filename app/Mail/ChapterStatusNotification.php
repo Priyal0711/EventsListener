@@ -21,9 +21,6 @@ class ChapterStatusNotification extends Mailable
 
     protected $chapter; // Declare the property
 
-    /**
-     * Create a new message instance.
-     */
     public function __construct(Chapter $chapter) // Accept the Chapter instance
     {
         $this->chapter = $chapter; // Set the property
