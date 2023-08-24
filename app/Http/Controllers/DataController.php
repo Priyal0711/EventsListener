@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+use App\Mail\WelcomeEmail;
+use Illuminate\Support\Facades\Mail;
+
 
 class DataController extends Controller
 {
@@ -47,10 +50,15 @@ class DataController extends Controller
         $useraccess_type = new UserAccessType();
         $useraccess_type->userid = $adddata->id;
         $useraccess_type->useraccessid = $request->input('access_type');
+        Mail::to($adddata->email)->queue(new WelcomeEmail());
         $useraccess_type->save();
 
         return view('login');
     }
+
+    
+
+
 
     public function adduser(Request $request){
         $request->validate([
