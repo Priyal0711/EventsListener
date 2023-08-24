@@ -8,7 +8,7 @@
 
     <p>You have been registered successfully on our website</p>
 
-    <p>Your role for our website is : {{ $useraccess->access_type }}</p>
+    <p>Your role for our website is : {{$useraccess}}</p>
 
     <p>For login our website use your credential email and password. </p>
 

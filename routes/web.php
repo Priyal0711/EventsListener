@@ -39,8 +39,6 @@ Route::delete('/chapter/delete/{id}', [ChapterController::class, 'delete'])->nam
 Route::get('/chapter/enable/{id}',[ChapterController::class, 'enableChapter'])->name('chapter.enable');
 Route::get('/chapter/disable/{id}',[ChapterController::class, 'disableChapter'])->name('chapter.disable');
 Route::get('/chapter/assign/{id}',[ChapterController::class, 'assignChapter'])->name('chapter.assign');
-
-// Route::get('/chapter/assign/{id}', 'ChapterController@assignChapter')->name('chapter.assign');
 Route::post('/chapterstatus',[ChapterController::class,'status'])->name('chapter.status');
 
 
@@ -70,3 +68,4 @@ Route::post('/assign_subject', [AssignSubjectController::class, 'assign'])->name
 
 Route::get('/assign_student', [AssignStudentController::class, 'index'])->name('assign_student.show')->middleware('auth');
 Route::post('/assign_student', [AssignStudentController::class, 'assign'])->name('assign_student.store')->middleware('auth');
+

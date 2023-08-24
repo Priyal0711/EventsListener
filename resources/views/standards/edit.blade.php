@@ -86,39 +86,38 @@
 @section('content1')
 <main>
     <div class="container1">
-        <button> <a href="{{ route('standard.show') }}">←Back</a> </button>
-    <div class="content1">
-        <form class="form1", method="post" action="{{ route('standard.update',$standard->id)}}">
-            @csrf
-            @method('PUT')
-            <table class="table1">
-                <th colspan="2">
-                    <h1>Update Standard</h1>
-                </th>
-
-                <tr>
-                    <td colspan="2">
-                        <input type="text" placeholder="ID" name="id" id="id" value="{{ $standard->id }}" readonly>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                            <input type="text" placeholder="standard" name="standard" id="standard" value="{{ $standard->standard }}" >
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <div class="btn1">
-                            <button type="submit" name="update" >Update standard</button>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </form>
-    </div>
-
-    </div>
+        <button><a href="{{ route('standard.show') }}">←Back</a></button>
+        <div class="content1">
+            <form class="form1" method="post" action="{{ route('standard.update', $standard->id) }}">
+                @csrf
+                @method('PUT')
+                <table class="table1">
+                    <tr>
+                        <th colspan="2">
+                            <h1>Update Standard</h1>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" placeholder="ID" name="id" id="id" value="{{ $standard->id }}" readonly>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="text" placeholder="Standard" name="standard" id="standard" value="{{ $standard->standard }}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="btn1">
+                                <button type="submit" name="update">Update Standard</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
     </div>
 </main>
+
 @endsection

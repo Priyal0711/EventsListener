@@ -35,7 +35,7 @@
             max-width: 400px;
         }
 
-        /* Form */
+        
         .form {
             margin-top: 20px;
         }
@@ -79,25 +79,6 @@
         .text-danger {
             color: red;
         }
-    </style>
-</head>
-<body>
-    <main>
-        <div class="container">
-            <div class="content">
-                <form class="form" method="post" action="{{ route('user.add') }}" enctype="multipart/form-data">
-                    @csrf
-                    <table class="table">
-                        <!-- Form fields here -->
-                    </table>
-                </form>
-            </div>
-        </div>
-    </main>
-</body>
-</html>
-
-           
         </style>
     </head>
     <body>

@@ -3,10 +3,10 @@
 @section('content1')
 
 <h1 style="text-align: center">List of All Standard</h1><br>
-@if(session('access_type') == "admin" || session('access_type') == "teacher")
+@if (session('access_type') == 'admin' || session('access_type') == 'teacher')
     <form style="text-align: center" action="{{ route('standard.store') }}" method="POST">
         @csrf
-        <label for="standard">Add New Subject : </label>
+        <label for="standard">Add New Standard : </label>
         <input type="text" name="standard">
         <input type="submit" name="add_std" value="Add Standard">
     </form><br>
@@ -17,7 +17,7 @@
             <tr>
                 <th style="padding: 5px">ID</th>
                 <th>Standard</th>
-                @if(session('access_type') == "admin" || session('access_type') == "teacher")
+                @if (session('access_type') == 'admin' || session('access_type') == 'teacher')
                     <th>Edit</th>
                     <th>Delete</th>
                 @endif
@@ -31,9 +31,9 @@
             <td>
                 {{ $std->standard }}
             </td>
-            @if(session('access_type') == "admin" || session('access_type') == "teacher")
+            @if (session('access_type') == 'admin' || session('access_type') == 'teacher')
                 <td>
-                    <button> <a href="{{ route('standard.edit', $std->id) }}"> Edit </a> </button>
+                    <button><a href="{{ route('standard.edit', $std->id) }}"> Edit </a></button>
                 </td>
                 <td>
                     <form action="{{ route('standard.delete', $std->id) }}" method="POST">
@@ -44,12 +44,13 @@
                 </td>
             @endif
         </tr>
+        @empty
         <tr>
-            @empty
-            <div>There are no standards!</div>
+            <td colspan="4">There are no standards!</td>
         </tr>
         @endforelse
     </table>
 </div>
+
 
 @endsection

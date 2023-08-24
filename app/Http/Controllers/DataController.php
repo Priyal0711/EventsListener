@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendEmail;
 use App\Models\Accesstype;
 use App\Models\Image;
 use App\Models\UserAccessType;
@@ -50,14 +51,12 @@ class DataController extends Controller
         $useraccess_type = new UserAccessType();
         $useraccess_type->userid = $adddata->id;
         $useraccess_type->useraccessid = $request->input('access_type');
-        Mail::to($adddata->email)->queue(new WelcomeEmail());
         $useraccess_type->save();
-
+        $useraccess_data = Accesstype::findorFail($useraccess_type->useraccessid);
+        $useraccess = $useraccess_data->access_type;
+        Mail::to($adddata->email)->queue(new WelcomeEmail($adddata, $useraccess));
         return view('login');
     }
-
-    
-
 
 
     public function adduser(Request $request){
@@ -155,9 +154,11 @@ class DataController extends Controller
 
             $userAccessType = UserAccessType::where('userid', session('id'))->first();
 
-
+// dd($userAccessType);
             $accessType = Accesstype::where('id', $userAccessType->useraccessid)->value('access_type');
             session(['access_type' => $accessType]);
+
+            
 
             return redirect()->route('user.dashboard');
         }

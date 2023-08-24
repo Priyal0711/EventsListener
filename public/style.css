@@ -2,28 +2,27 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
-/* Basic styling */
 body {
   font-family: 'Poppins', sans-serif;
 }
 
-/* Container */
 .container {
-  background-color: #28292d;
+  background-color:#28292d;
   color: white;
 }
 
-/* Header */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  background-color: midnightblue;
 }
 
-/* Profile section */
 .profile {
   display: flex;
   align-items: center;
@@ -44,6 +43,7 @@ body {
 .menu {
   display: flex;
   align-items: center;
+  justify-content: right;
 
 }
 
@@ -53,13 +53,12 @@ body {
   background-color: #f2f2f2;
   border: none;
   border-radius: 4px;
-  /* float: right; */
   
 }
 
-/* Navbar */
+
 .navbar {
-  background-color: #555;
+  background-color: gray;
   overflow: hidden;
 }
 
@@ -67,12 +66,27 @@ body {
   float: left;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 7px;
+
+}
+
+.navbar1 {
+  overflow: hidden;
+  margin-top: 7px;
+}
+
+.navbar1 button {
+  float: right;
+  color: white;
+  text-align: center;
+  padding: 8px 14px;
   text-decoration: none;
   font-size: 17px;
   margin: 0 5px;
 }
-
 
 .dropdown {
   float: left;
@@ -86,7 +100,9 @@ body {
   color: black;
   padding: 15px 16px;
   background-color: #f2f2f2;
-  margin: 0 5px;
+  margin: 9px 5px 5px;
+  height: 40.49px;
+  display: flex;
 }
 
 .navbar button:hover, .dropdown:hover .dropbtn {
@@ -119,4 +135,5 @@ body {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 

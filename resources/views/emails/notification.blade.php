@@ -12,7 +12,7 @@
 
     <p>Thank you for your attention to this matter.</p>
 
-    <p>Best regards,</p>
-    <p>Your Name</p> <!-- Customize with your name or organization's name -->
+    <p>Best regards</p>
+    
 </body>
 </html>
