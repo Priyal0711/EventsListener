@@ -10,6 +10,7 @@ use App\Http\Controllers\SubjectController;
 use App\Models\Accesstype;
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/' , function() { return view('login'); });
 Route::post('/', [DataController::class, 'login'])->name('user.login');
 Route::get('/', [DataController::class, 'logout'])->name('user.logout');
@@ -36,6 +37,7 @@ Route::get('/chapter/edit/{id}', [ChapterController::class, 'edit'])->name('chap
 Route::get('/chapter/display/{id}', [ChapterController::class, 'display'])->name('chapter.display')->middleware('auth');
 Route::delete('/chapter/delete/{id}', [ChapterController::class, 'delete'])->name('chapter.delete')->middleware('auth');
 
+//Chapter Status
 Route::get('/chapter/enable/{id}',[ChapterController::class, 'enableChapter'])->name('chapter.enable');
 Route::get('/chapter/disable/{id}',[ChapterController::class, 'disableChapter'])->name('chapter.disable');
 Route::get('/chapter/assign/{id}',[ChapterController::class, 'assignChapter'])->name('chapter.assign');

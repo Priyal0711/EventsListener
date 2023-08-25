@@ -64,91 +64,88 @@
         }
     </style>
 </head>
- <body>
-            <main>
-                <div class="container">
-                <div class="content">
-                    <form class="form", method="post" action="{{ route('user.store') }}" enctype="multipart/form-data">
-                        @csrf
-                        <table class="table">
-                            <th colspan="2">
-                                <h1>Registration Form</h1>
-                            </th>
-                            <tr class="tr">
-                                <td colspan="2">
-                                    <input type="text" class="form-control @error('first_name') is-invalid @enderror " placeholder="First Name" name="first_name" id="first_name" >
-                                    @if ($errors->has('first_name'))
-                                        <span class="text-danger">{{ $errors->first('first_name') }}</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <input type="text" class="form-control @error('last_name') is-invalid @enderror " placeholder="Last Name" name="last_name" id="last_name" >
-                                    @if ($errors->has('last_name'))
-                                        <span class="text-danger">{{ $errors->first('last_name') }}</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror " placeholder="E-mail" name="email" id="email" >
-                                    @if ($errors->has('email'))
-                                        <span class="text-danger">{{ $errors->first('email') }}</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="inpt" colspan="2">
-                                    <input type="text" class="form-control @error('city') is-invalid @enderror " placeholder="City" name="city" id="city">
-                                    @if ($errors->has('city'))
-                                        <span class="text-danger">{{ $errors->first('city') }}</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="inpt" colspan="2">
-                                    <label for="access_type">Select Access Type : </label>
-                                    <select name="access_type"  id="access_type">
+<body>
+    <main>
+        <div class="container">
+            <div class="content">
+                <form class="form" method="post" action="{{ route('user.store') }}" enctype="multipart/form-data">
+                    @csrf
+                    <table class="table">
+                        <th colspan="2">
+                            <h1>Registration Form</h1>
+                        </th>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" class="form-control @error('first_name') is-invalid @enderror" placeholder="First Name" name="first_name" id="first_name">
+                                @if ($errors->has('first_name'))
+                                    <span class="text-danger">{{ $errors->first('first_name') }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="text" class="form-control @error('last_name') is-invalid @enderror" placeholder="Last Name" name="last_name" id="last_name">
+                                @if ($errors->has('last_name'))
+                                    <span class="text-danger">{{ $errors->first('last_name') }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" placeholder="E-mail" name="email" id="email">
+                                @if ($errors->has('email'))
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="inpt" colspan="2">
+                                <input type="text" class="form-control @error('city') is-invalid @enderror" placeholder="City" name="city" id="city">
+                                @if ($errors->has('city'))
+                                    <span class="text-danger">{{ $errors->first('city') }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="inpt" colspan="2">
+                                <label for="access_type">Select Access Type :</label>
+                                <select name="access_type" id="access_type">
                                     @foreach ($access_type as $access)
                                         <option value="{{ $access->id }}">{{ $access->access_type }}</option>
                                     @endforeach
                                 </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type="file" class="form-control @error('profileimage') is-invalid @enderror " name="profileimage" id="profileimage">
-                                    @if ($errors->has('profileimage'))
-                                        <span class="text-danger">{{ $errors->first('profileimage') }}</span>
-                                    @endif
-                                </td>
-                            </tr>
-                           
-                           
-                            <tr>
-                                <td colspan="2">
-                                    <input type="password" class="form-control @error('password') is-invalid @enderror " placeholder="Password" name="password" id="password" >
-                                    @if ($errors->has('password'))
-                                        <span class="text-danger">{{ $errors->first('password') }}</span>
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <div class="btn">
-                                        <button type="submit" name="register" >Register</button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-                        <p class="login">
-                            Already have an account ? <a href="{{ route('user.login') }}">Login here</a>
-                        </p>
-
-                </div>
-                </div>
-            </main>
-        </body>
-    </html>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="file" class="form-control @error('profileimage') is-invalid @enderror" name="profileimage" id="profileimage">
+                                @if ($errors->has('profileimage'))
+                                    <span class="text-danger">{{ $errors->first('profileimage') }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" id="password">
+                                @if ($errors->has('password'))
+                                    <span class="text-danger">{{ $errors->first('password') }}</span>
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <div class="btn">
+                                    <button type="submit" name="register">Register</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <p class="login">
+                    Already have an account? <a href="{{ route('user.login') }}">Login here</a>
+                </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

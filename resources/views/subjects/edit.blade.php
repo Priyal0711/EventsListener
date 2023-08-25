@@ -1,85 +1,53 @@
 @extends('layouts.app')
 @section('style')
 <style>
-    main
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background: #1c1c1c;
-    }
-    .table1
-    {
-        position: relative;
-        width: 300px;
-        margin-top: 35px;
-        text-align: center;
-    }
-    .table1 input
-    {
-        position: relative;
-        border : none;
-        width: 100%;
-        padding: 20px 10px 10px;
-        border-bottom: 1px solid #45f3ff;
-        font-size: 1em;
-        background-color: #28292d;
-        letter-spacing: 0.05em;
-        color: whitesmoke;
-    }
-    .table1 select ,label{
-        position: relative;
-        border : none;
-        padding: 10px auto;
-        margin: 20px 5px 10px 0px;
-        border-bottom: 1px solid #45f3ff;
-        font-size: 1em;
-        background-color: #28292d;
-        letter-spacing: 0.05em;
-        color: whitesmoke;
-    }
-    h1{
-        color: whitesmoke;
-    }
-    .container1
-    {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        width: 400px;
-        height: fit-content;
-        border-radius: 8px;
-        overflow: hidden;
-        scale: 1;
-    }
-    .content1{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        height: fit-content;
-        width: 400px;
-        background: #28292d;
-        scale: 0.985;
-    }
-    .form1{
-        color: whitesmoke;
+    .container1 {
+        max-width: 800px;
+        margin: 0 auto;
     }
 
-    .login a{
-        color: #45f3ff;
-        text-decoration: none;
+    .content1 {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
     }
-    .btn1 button{
-        margin: 15px 75px;
-        width: 50%;
-        font-size: large;
-        font-weight: bold;
+
+    .form1 {
+        text-align: center;
     }
-    a{
-        text-decoration: none;
-        font-weight: bolder;
-        color: black;
+
+    .table1 {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table1 th,
+    .table1 td {
+        padding: 10px;
+        border: 1px solid #ddd;
+    }
+
+    .table1 th {
+        background-color: #f2f2f2;
+    }
+
+    .btn1 {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn1 button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    .btn1 button:hover {
+        background-color: #0056b3;
     }
 </style>
 @endsection

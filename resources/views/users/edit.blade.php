@@ -98,55 +98,52 @@
     <body>
         <main>
             <div class="container">
+                <div class="content">
+                    <form class="form", method="post" action="{{ route('user.update',$data->id)}}">
+                        @csrf
+                        @method('PUT')
+                        <table class="table">
+                            <th colspan="2">
+                                <h1>Update Data</h1>
+                            </th>
 
-            <div class="content">
-                <form class="form", method="post" action="{{ route('user.update',$data->id)}}">
-                    @csrf
-                    @method('PUT')
-                    <table class="table">
-                        <th colspan="2">
-                            <h1>Update Data</h1>
-                        </th>
-
-                        <tr>
-                            <td colspan="2">
-                                <input type="text" placeholder="ID" name="id" id="id" value="{{ $data->id }}" readonly>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                    <input type="text" placeholder="First Name" name="first_name" id="first_name" value="{{ $data->first_name }}" >
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input type="text" placeholder="Last Name" name="last_name" id="last_name" value="{{ $data->last_name }}" >
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2">
-                                <input type="email" placeholder="E-mail" name="email" id="email" value="{{ $data->email }}">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="inpt" colspan="2">
-                                <input type="text" placeholder="City" name="city" id="city" value="{{ $data->city }}">
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td colspan="3">
-                                <div class="btn">
-                                    <button type="submit" name="update" >Update Data</button>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-
-            </div>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="text" placeholder="ID" name="id" id="id" value="{{ $data->id }}" readonly>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                        <input type="text" placeholder="First Name" name="first_name" id="first_name" value="{{ $data->first_name }}" >
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="text" placeholder="Last Name" name="last_name" id="last_name" value="{{ $data->last_name }}" >
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="email" placeholder="E-mail" name="email" id="email" value="{{ $data->email }}">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="inpt" colspan="2">
+                                    <input type="text" placeholder="City" name="city" id="city" value="{{ $data->city }}">
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td colspan="3">
+                                    <div class="btn">
+                                        <button type="submit" name="update" >Update Data</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
             </div>
         </main>
     </body>
