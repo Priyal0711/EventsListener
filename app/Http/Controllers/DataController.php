@@ -7,6 +7,7 @@ use App\Models\Accesstype;
 use App\Models\Image;
 use App\Models\UserAccessType;
 use App\Models\Userdata;
+use App\Rules\PasswordRequirement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -65,7 +66,7 @@ class DataController extends Controller
             'last_name' => 'required|string',
             'email' => 'required|email|unique:userdatas',
             'city' => 'required|string',
-            'password' => 'required|min:8',
+            'password' => 'required|min:8', new PasswordRequirement,
             'profileimage' => 'image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
